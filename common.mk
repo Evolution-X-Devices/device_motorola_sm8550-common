@@ -100,13 +100,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
 
-# Face unlock
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.face-service.motorola
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.biometrics.face.xml
-
 # GPS
 PRODUCT_PACKAGES += \
     gnss@2.0-base.policy \
@@ -156,6 +149,9 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml \
     IPACM_Filter_cfg.xml
+
+# Kernel
+PRODUCT_ENABLE_UFFD_GC := true
 
 # Keymint
 PRODUCT_PACKAGES += \
@@ -212,7 +208,8 @@ PRODUCT_PACKAGES += \
     FrameworksResCommon \
     LineageApertureAppCommon \
     LineageSdkCommon \
-    LineageSettingsCommon \
+    SettingsProviderResCommon \
+    SettingsResCommon \
     SystemUIResCommon \
     TelephonyResCommon \
     WifiResCommon \
